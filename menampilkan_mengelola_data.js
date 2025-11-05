@@ -1,51 +1,34 @@
-const prompt = require('prompt-sync')();
+function cariBarang() {
+  console.log("\n=== Cari Barang ===");
+  if (barang.length === 0) {
+    console.log("Belum ada data barang untuk dicari.\n");
+    return;
+  }
 
-let barang = [];
+  const keyword = prompt("Masukkan nama barang yang dicari: ").toLowerCase();
+  let ditemukan = false;
 
-function tambahBarang() {
-    console.log("\n=== Tambah Data Barang ===");
-
-    let nama = prompt("Masukkan nama barang: ");
-    let harga = parseFloat(prompt("Masukkan harga barang: "));
-
-    if (nama === "" || isNaN(harga)) {
-        console.log("Input tidak valid! Pastikan nama dan harga diisi dengan benar.");
-        return;
+  for (let i = 0; i < barang.length; i++) {
+    if (barang[i].nama.toLowerCase().includes(keyword)) {
+      console.log(`Ditemukan: ${barang[i].nama} - Rp ${barang[i].harga}`);
+      ditemukan = true;
     }
+  }
 
-    barang.push({ nama: nama, harga: harga });
-
-    console.log(`Barang '${nama}' dengan harga Rp${harga} berhasil ditambahkan!`);
+  if (!ditemukan) {
+    console.log("Barang tidak ditemukan.");
+  }
+  console.log("");
 }
 
-//tugas 2 
-function tampilkanBarang() {
-    console.log("\n=== Daftar Barang ===");
-    if (barang.length === 0) {
-        console.log("Belum ada data barang.");
-    } else {
-        for (let i = 0; i < barang.length; i++) {
-            console.log(`${i + 1}. ${barang[i].nama} - Rp${barang[i].harga}`);
-        }
-    }
-}
+function urutkanBarang() {
+  console.log("\n=== Urutkan Barang Berdasarkan Harga ===");
+  if (barang.length === 0) {
+    console.log("Belum ada data untuk diurutkan.\n");
+    return;
+  }
 
-while (true) {
-    console.log("\n=== MENU DATA BARANG ===");
-    console.log("1. Tambah Barang");
-    console.log("2. Lihat Daftar Barang");
-    console.log("3. Keluar");
-
-    let pilih = prompt("Pilih menu (1-3): ");
-
-    if (pilih == "1") {
-        tambahBarang();
-    } else if (pilih == "2") {
-        tampilkanBarang();
-    } else if (pilih == "3") {
-        console.log("Terima kasih! Program selesai.");
-        break;
-    } else {
-        console.log("Pilihan tidak valid.");
-    }
+  barang.sort((a, b) => a.harga - b.harga);
+  console.log("Data berhasil diurutkan (termurah ke termahal):");
+  tampilkanBarang();
 }
