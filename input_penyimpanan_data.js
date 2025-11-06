@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")({ sigint: true });
+
 let barang = []; // array untuk menyimpan data barang
 
 function tambahBarang() {
@@ -16,3 +18,4 @@ function tambahBarang() {
 
   console.log(Barang '${nama}' berhasil ditambahkan!\n);
 }
+
