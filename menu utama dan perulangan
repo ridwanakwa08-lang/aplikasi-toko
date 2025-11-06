@@ -1,0 +1,26 @@
+while (true) {
+  console.log("=== MENU UTAMA TOKO ===");
+  console.log("1. Tambah Barang");
+  console.log("2. Tampilkan Barang");
+  console.log("3. Cari Barang");
+  console.log("4. Urutkan Barang (Harga)");
+  console.log("5. Keluar");
+
+  const pilihan = prompt("Pilih menu (1-5): ");
+  console.log(""); // jarak antar menu
+
+  if (pilihan === "1") {
+    tambahBarang();
+  } else if (pilihan === "2") {
+    tampilkanBarang();
+  } else if (pilihan === "3") {
+    cariBarang();
+  } else if (pilihan === "4") {
+    urutkanBarang();
+  } else if (pilihan === "5") {
+    console.log("Terima kasih telah menggunakan aplikasi ini!");
+    break; // keluar dari while(true)
+  } else {
+    console.log("Pilihan tidak valid! Silakan coba lagi.\n");
+  }
+}
