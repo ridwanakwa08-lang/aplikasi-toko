@@ -1,3 +1,5 @@
+// PT 
+
 const prompt = require("prompt-sync")({ sigint: true });
 
 let barang = []; // array untuk menyimpan data barang
@@ -96,3 +98,4 @@ while (true) {
     console.log("Pilihan tidak valid! Silakan coba lagi.\n");
   }
 }
+
