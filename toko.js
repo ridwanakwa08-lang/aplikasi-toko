@@ -1,4 +1,4 @@
-// PT 
+// PT sukses_lancar_rezeki
 
 const prompt = require("prompt-sync")({ sigint: true });
 
@@ -98,4 +98,5 @@ while (true) {
     console.log("Pilihan tidak valid! Silakan coba lagi.\n");
   }
 }
+
 
