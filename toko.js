@@ -2,7 +2,7 @@
 
 const prompt = require("prompt-sync")({ sigint: true });
 
-let barang = []; // array untuk menyimpan data barang
+let barang = []; 
 
 function tambahBarang() {
   console.log("\n=== Tambah Barang Baru ===");
@@ -31,7 +31,7 @@ function tampilkanBarang() {
   for (let i = 0; i < barang.length; i++) {
     console.log(`${i + 1}. ${barang[i].nama} - Rp ${barang[i].harga}`);
   }
-  console.log(""); // baris kosong
+  console.log(""); 
 }
 
 
@@ -65,7 +65,7 @@ function urutkanBarang() {
     return;
   }
 
-  // menggunakan sort() berdasarkan harga (termurah ke termahal)
+  
   barang.sort((a, b) => a.harga - b.harga);
   console.log("Data barang berhasil diurutkan berdasarkan harga (termurah ke termahal).");
   tampilkanBarang();
@@ -81,7 +81,7 @@ while (true) {
   console.log("5. Keluar");
 
   const pilihan = prompt("Pilih menu (1-5): ");
-  console.log(""); // jarak antar menu
+  console.log(""); 
 
   if (pilihan === "1") {
     tambahBarang();
@@ -93,10 +93,11 @@ while (true) {
     urutkanBarang();
   } else if (pilihan === "5") {
     console.log("Terima kasih telah menggunakan aplikasi ini!");
-    break; // keluar dari while(true)
+    break; 
   } else {
     console.log("Pilihan tidak valid! Silakan coba lagi.\n");
   }
 }
+
 
 
