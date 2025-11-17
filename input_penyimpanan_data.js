@@ -2,7 +2,7 @@
 
 const prompt = require("prompt-sync")({ sigint: true });
 
-let barang = []; // array untuk menyimpan data barang
+let barang = [];
 
 function tambahBarang() {
   console.log("\n=== Tambah Barang Baru ===");
@@ -14,11 +14,12 @@ function tambahBarang() {
     return;
   }
 
-  // Simpan barang ke array
+  
   const dataBaru = { nama: nama, harga: harga };
   barang.push(dataBaru);
 
   console.log(Barang '${nama}' berhasil ditambahkan!\n);
 }
+
 
 
